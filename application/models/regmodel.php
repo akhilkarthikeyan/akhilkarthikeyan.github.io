@@ -15,4 +15,10 @@ class Regmodel extends CI_Model
 		$query=$this->db->get('products');
 		return $query->row();
 	}
+	function search($id)
+	{
+		$this->db->where("name LIKE '%$id%'");
+		$query=$this->db->get('products');
+		return $query->result();
+	}
 }

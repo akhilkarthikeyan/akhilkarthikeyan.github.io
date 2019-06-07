@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Mysite</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -50,8 +50,8 @@
 </head>
 <body>
 <div class="navbar" id="nav">
-  <form class="form-inline" action="<?php echo site_url();?>/User/search">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+  <form class="form-inline" action="<?php echo site_url();?>/User/search" method="get">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search">
     <button class="btn btn-success" type="submit">Search</button>
   </form>
 </div>
@@ -72,7 +72,8 @@
         <img src="../../assets/images/products/<?php echo $row->image;?>" width="60%"></div><br>List Price
         <s><?php echo $row->list_price;?></s><br>
         Selling Price
-        <?php echo $row->sell_price;?>
+        <?php echo $row->sell_price;?><br>
+        <a href="<?php echo site_url();?>/User/checkout/?id=<?php echo $row->id;?>"><button class="btn btn-success">Add to cart</button></a>
 </a>
       </div>
       
